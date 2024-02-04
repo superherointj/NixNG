@@ -34,8 +34,8 @@ let
         ({ ... }:
           {
             _module.args = {
-              pkgs = nixpkgs.legacyPackages.${system}.appendOverlays [ overlay ];
-              inherit system;
+              pkgs = (nixpkgs.legacyPackages.${system}.appendOverlays [ overlay ]).pkgsMusl;
+              inherit system nglib;
             };
           }
         )
